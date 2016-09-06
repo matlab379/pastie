@@ -33,7 +33,7 @@ Perspective::Perspective(Camera *c, Pattern *p) :
 	cam(c),
 	pattern(p)
 {
-	settings["Scale"] = new DoubleSetting(this, alpha, Range<double>(0.5, 2));
+    settings["Scale"] = new DoubleSetting(this, alpha, ps::Range<double>(0.5, 2));
 }
 
 Result * Perspective::applyInternal(Image *img)

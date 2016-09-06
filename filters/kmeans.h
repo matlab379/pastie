@@ -44,7 +44,7 @@ class KMeans : public Filter
 		Result * applyInternal(Image *img);
 
 		QList<Point> colorFilterPoints;
-		Range<int> colorFilterRange;
+        ps::Range<int> colorFilterRange;
 
 		int k, iterations;
 		Mat labels;

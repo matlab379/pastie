@@ -183,16 +183,16 @@ QWidget * RangeSetting::createWidget(QWidget *parent)
 	return widget;
 }
 
-Range<double> DoubleRangeSetting::getSliderRange(Range<int> r)
+ps::Range<double> DoubleRangeSetting::getSliderRange(ps::Range<int> r)
 {
-	Range<double> range = {
+    ps::Range<double> range = {
 		((double) r.min / slider->maximum()) * (limits.max - limits.min) + limits.min,
 		((double) r.max / slider->maximum()) * (limits.max - limits.min) + limits.min };
 
 	return range;
 }
 
-void DoubleRangeSetting::setSliderRange(Range<double> range)
+void DoubleRangeSetting::setSliderRange(ps::Range<double> range)
 {
 	slider->setMinimumValue(slider->maximum() * (range.min - limits.min) / (limits.max - limits.min));
 	slider->setMaximumValue(slider->maximum() * (range.max - limits.min) / (limits.max - limits.min));
@@ -220,12 +220,12 @@ QWidget * DoubleRangeSetting::createWidget(QWidget *parent)
 	setSliderRange(range);
 
 	connect(slider, static_cast<void (RangeSlider::*)(int, int)>(&RangeSlider::positionsChanged), [&](int mi, int ma) {
-		range = getSliderRange(Range<int>(mi, ma));
+        range = getSliderRange(ps::Range<int>(mi, ma));
 		spinnerL->setValue(range.min);
 		spinnerU->setValue(range.max);
 	});
 	connect(slider, static_cast<void (RangeSlider::*)(int, int)>(&RangeSlider::valuesChanged), [&](int mi, int ma) {
-		range = getSliderRange(Range<int>(mi, ma));
+        range = getSliderRange(ps::Range<int>(mi, ma));
 		emit  valueChanged();
 	});
 	connect(spinnerL, static_cast<void (QDoubleSpinBox::*)()>(&QDoubleSpinBox::editingFinished), [&]() {

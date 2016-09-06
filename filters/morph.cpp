@@ -47,7 +47,7 @@ Morph::Morph(int o, int t, Size s, Point a, int i) :
 	settings["Iterations"]	= new IntegerSetting(this, iterations);
 	settings["Operation"]	= new EnumSetting(this, op, mapOp);
 	settings["Shape"]		= new EnumSetting(this, shape, mapShape);
-	settings["Size"]		= new SizeSetting(this, size, Range<int>(1, 32));
+    settings["Size"]		= new SizeSetting(this, size, ps::Range<int>(1, 32));
 
 	reset();
 }

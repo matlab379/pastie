@@ -49,14 +49,14 @@ Pattern::Pattern(Size si, Size sp, Type t) :
 	mapType[ASYMMETRIC_CIRCLES_GRID] = "Asymmetric Circles Grid";
 	mapType[QUADRILINEAR_MARKERS] = "Quadrilinear Markers";
 
-	settings["Size"]	= new SizeSetting(this, size, Range<int>(1, 16));
-	settings["Spacing"] = new SizeSetting(this, spacing, Range<int>(0, 5000));
+    settings["Size"]	= new SizeSetting(this, size, ps::Range<int>(1, 16));
+    settings["Spacing"] = new SizeSetting(this, spacing, ps::Range<int>(0, 5000));
 	settings["Type"]	= new EnumSetting(this, (int&) type, mapType);
 
 	if (type == QUADRILINEAR_MARKERS) {
 		settings["Show Threshold"] = new BooleanSetting(this, showThresh);
-		settings["Area Range"] = new DoubleRangeSetting(this, areaRange, Range<double>(0000, 50000));
-		settings["Ratio Range"] = new DoubleRangeSetting(this, ratioRange, Range<double>(1, 2));
+        settings["Area Range"] = new DoubleRangeSetting(this, areaRange, ps::Range<double>(0000, 50000));
+        settings["Ratio Range"] = new DoubleRangeSetting(this, ratioRange, ps::Range<double>(1, 2));
 	}
 }
 

@@ -23,7 +23,7 @@
 
 #ifndef RANGE_H
 #define RANGE_H
-
+namespace ps {
 template <typename T>
 class Range
 {
@@ -45,5 +45,5 @@ class Range
 
 		T min, max;
 };
-
+}
 #endif // RANGE_H

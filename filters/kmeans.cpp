@@ -34,10 +34,10 @@ KMeans::KMeans(int km) :
 	iterations(3),
 	iterative(false)
 {
-	settings["K"]			= new IntegerSetting(this, k, Range<int>(1, 10));
-	settings["Iterations"]	= new IntegerSetting(this, iterations, Range<int>(1, 10));
+    settings["K"]			= new IntegerSetting(this, k, ps::Range<int>(1, 10));
+    settings["Iterations"]	= new IntegerSetting(this, iterations, ps::Range<int>(1, 10));
 	settings["Iterative"]	= new BooleanSetting(this, iterative, "Use labels from last run as starting point.");
-	settings["Color"]		= new RangeSetting(this, colorFilterRange, Range<int>(1, 10));
+    settings["Color"]		= new RangeSetting(this, colorFilterRange, ps::Range<int>(1, 10));
 }
 
 void KMeans::reset()

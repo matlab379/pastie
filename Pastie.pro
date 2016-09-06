@@ -6,7 +6,7 @@
 
 QT += core gui opengl multimedia serialport
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 5): QT += widgets
 
 TARGET = Pastie
 TEMPLATE = app
@@ -75,7 +75,7 @@ HEADERS += mainwindow.h \
     filters/paddetect.h \
     pad.h \
     filters/resize.h \
-    qspanslider.h \
+   # qspanslider.h \
     rangeslider.h \
     range.h \
     filters/rectify.h \
@@ -127,7 +127,7 @@ LIBS +=	-lopencv_core \
 	-lopencv_videoio \
 	-lopencv_calib3d \
         -lopencv_features2d \
-        -framework CoreFoundation
+#        -framework CoreFoundation
 
 RESOURCES += \
     images.qrc \
@@ -136,4 +136,4 @@ RESOURCES += \
 OTHER_FILES +=
 
 CONFIG += c++11
-QMAKE_MAC_SDK = macosx10.10
+#QMAKE_MAC_SDK = macosx10.10

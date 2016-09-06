@@ -62,8 +62,8 @@ class Pattern : public Filter
 		int flags = CALIB_CB_ADAPTIVE_THRESH + CALIB_CB_NORMALIZE_IMAGE + CALIB_CB_FAST_CHECK;
 
 		/* QUADRILINEAR Settings */
-		Range<double> areaRange;
-		Range<double> ratioRange;
+        ps::Range<double> areaRange;
+        ps::Range<double> ratioRange;
 		bool showThresh;
 };
 

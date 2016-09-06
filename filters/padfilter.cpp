@@ -29,8 +29,8 @@ PadFilter::PadFilter(Filter *s) :
 	areaRange(35, 6000),
 	ratioRange(1, 3)
 {
-	settings["Area Range"]  = new DoubleRangeSetting(this, areaRange,  Range<double>(1, 50000));
-	settings["Ratio Range"] = new DoubleRangeSetting(this, ratioRange, Range<double>(1, 10));
+    settings["Area Range"]  = new DoubleRangeSetting(this, areaRange,  ps::Range<double>(1, 50000));
+    settings["Ratio Range"] = new DoubleRangeSetting(this, ratioRange, ps::Range<double>(1, 10));
 }
 
 Result * PadFilter::applyInternal(Image *img)

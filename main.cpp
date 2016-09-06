@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
 	filters->append(pattern);
 	filters->append(new Perspective(cam, pattern));
-	filters->append(new Resize(Range<int>(400, 1000)));
+    filters->append(new Resize(ps::Range<int>(400, 1000)));
 	filters->append(new Blur(Blur::GAUSSIAN, Size(3, 3)));
 	filters->append(new KMeans(4));
 	filters->append(new Convert(COLOR_BGR2GRAY));

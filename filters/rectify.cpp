@@ -27,8 +27,8 @@ Rectify::Rectify(double t) :
 	threshold(t),
 	thresholdHough(100)
 {
-	settings["Threshold Degree"] = new DoubleSetting(this, threshold, Range<double>(0, 360));
-	settings["Threshold Hough"]  = new IntegerSetting(this, thresholdHough, Range<int>(0, 500));
+    settings["Threshold Degree"] = new DoubleSetting(this, threshold, ps::Range<double>(0, 360));
+    settings["Threshold Hough"]  = new IntegerSetting(this, thresholdHough, ps::Range<int>(0, 500));
 }
 
 Result * Rectify::applyInternal(Image *img)

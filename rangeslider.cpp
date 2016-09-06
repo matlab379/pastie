@@ -32,7 +32,7 @@
 #include <QStyle>
 #include <QToolTip>
 
-#include "RangeSlider.h"
+#include "rangeslider.h"
 
 class RangeSliderPrivate
 {

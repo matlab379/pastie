@@ -23,7 +23,7 @@
 
 #include "resize.h"
 
-Resize::Resize(Range<int> r, int i) :
+Resize::Resize(ps::Range<int> r, int i) :
 	range(r),
 	interpolation(i)
 {
@@ -34,7 +34,7 @@ Resize::Resize(Range<int> r, int i) :
 	interMap[INTER_CUBIC]		= "Bi-Cubic (4x4)";
 	interMap[INTER_LANCZOS4]	= "Lanczos4 (8x8)";
 
-	settings["Range"] = new RangeSetting(this, range, Range<int>(200, 3000));
+    settings["Range"] = new RangeSetting(this, range, ps::Range<int>(200, 3000));
 	settings["Interpolation"] = new EnumSetting(this, (int &) interpolation, interMap);
 }
 

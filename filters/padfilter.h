@@ -41,7 +41,7 @@ class PadFilter : public Filter
 
 		Filter *source;
 
-		Range<double> areaRange, ratioRange;
+        ps::Range<double> areaRange, ratioRange;
 
 		QList<Point2f> addPoints, delPoints;
 };

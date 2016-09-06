@@ -44,9 +44,9 @@ PadDetect::PadDetect(double e, double cos) :
 	mapMode[COSINE] = "Cosine";
 
 	settings["Mode"]	= new EnumSetting(this, (int&) mode, mapMode);
-	settings["Epsilon"] = new DoubleSetting(this, epsilon, Range<double>(0, 1));
-	settings["Area Ratio"] = new DoubleSetting(this, areaRatio, Range<double>(0, 1));
-	settings["Cosine"]  = new DoubleSetting(this, cosine, Range<double>(0, 1));
+    settings["Epsilon"] = new DoubleSetting(this, epsilon, ps::Range<double>(0, 1));
+    settings["Area Ratio"] = new DoubleSetting(this, areaRatio, ps::Range<double>(0, 1));
+    settings["Cosine"]  = new DoubleSetting(this, cosine, ps::Range<double>(0, 1));
 }
 
 Result * PadDetect::applyInternal(Image *img)

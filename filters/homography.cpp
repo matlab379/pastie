@@ -38,7 +38,7 @@ Homography::Homography(const Mat &ho, int i = INTER_LINEAR) :
 
 	for (int i=0; i<9; i++) {
 		h[i] = ho.at<double>(i);
-		settings["h[" + QString::number(i) + "]"] = new DoubleSetting(this, h[i], Range<double>(-2, 2));
+        settings["h[" + QString::number(i) + "]"] = new DoubleSetting(this, h[i], ps::Range<double>(-2, 2));
 	}
 }
 

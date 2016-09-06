@@ -30,7 +30,7 @@ using namespace cv;
 Channel::Channel(int ch) :
 	channel(ch)
 {
-	settings["Channel"] = new IntegerSetting(this, channel, Range<int>(0, 5));
+    settings["Channel"] = new IntegerSetting(this, channel, ps::Range<int>(0, 5));
 }
 
 Result * Channel::applyInternal(Image *img)

@@ -35,8 +35,8 @@ Rotate::Rotate(double a, int i = INTER_LINEAR, double s) :
 	interMap[INTER_CUBIC]		= "Bi-Cubic (4x4)";
 	interMap[INTER_LANCZOS4]	= "Lanczos4 (8x8)";
 
-	settings["Angle"] = new DoubleSetting(this, angle, Range<double>(0, 360));
-	settings["Scale"] = new DoubleSetting(this, scale, Range<double>(0.5, 2));
+    settings["Angle"] = new DoubleSetting(this, angle, ps::Range<double>(0, 360));
+    settings["Scale"] = new DoubleSetting(this, scale, ps::Range<double>(0.5, 2));
 	settings["Interpolation"] = new EnumSetting(this, (int &) interpolation, interMap);
 }
 

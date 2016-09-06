@@ -35,7 +35,7 @@ Derivative::Derivative(Type t, Size o, int s) :
 
 	settings["Type"]	= new EnumSetting(this, (int&) type, typeMap);
 	settings["Order"]	= new SizeSetting(this, order);
-	settings["Size"]	= new IntegerSetting(this, size, Range<int>(1, 10));
+    settings["Size"]	= new IntegerSetting(this, size, ps::Range<int>(1, 10));
 	settings["Maxima"]	= new BooleanSetting(this, maxima, "Find local maximas in source image.");
 	settings["Scale"]	= new DoubleSetting(this, scale);
 	settings["Delta"]	= new DoubleSetting(this, delta);

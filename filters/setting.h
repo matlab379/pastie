@@ -78,14 +78,14 @@ class IntegerSetting : public Setting
 	Q_OBJECT
 
 	public:
-		IntegerSetting(Filter *f, int &v, Range<int> l = Range<int>(0, 100), QString tip = "") :
+        IntegerSetting(Filter *f, int &v, ps::Range<int> l = ps::Range<int>(0, 100), QString tip = "") :
 			Setting(f, tip), value(v), limits(l) { }
 
 	protected:
 		QWidget * createWidget(QWidget *parent = 0);
 
 		int &value;
-		Range<int> limits;
+        ps::Range<int> limits;
 		QSpinBox *spinner;
 		QSlider *slider;
 };
@@ -95,7 +95,7 @@ class DoubleSetting : public Setting
 	Q_OBJECT
 
 	public:
-		DoubleSetting(Filter *f, double &v, Range<double> l = Range<double>(0, 100), QString tip = "") :
+        DoubleSetting(Filter *f, double &v, ps::Range<double> l = ps::Range<double>(0, 100), QString tip = "") :
 			Setting(f, tip), value(v), limits(l) { }
 
 	protected:
@@ -104,7 +104,7 @@ class DoubleSetting : public Setting
 		QWidget * createWidget(QWidget *parent = 0);
 
 		double &value;
-		Range<double> limits;
+        ps::Range<double> limits;
 		QDoubleSpinBox *spinner;
 		QSlider *slider;
 
@@ -117,14 +117,14 @@ class RangeSetting : public Setting
 		Q_OBJECT
 
 	public:
-		RangeSetting(Filter *f, Range<int> &r, Range<int> l = Range<int>(0, 100), QString tip = "") :
+        RangeSetting(Filter *f, ps::Range<int> &r, ps::Range<int> l = ps::Range<int>(0, 100), QString tip = "") :
 			Setting(f, tip), range(r), limits(l) { }
 
 	protected:
 		QWidget * createWidget(QWidget *parent);
 
-		Range<int> &range;
-		Range<int> limits;
+        ps::Range<int> &range;
+        ps::Range<int> limits;
 
 		QSpinBox *spinnerL, *spinnerU;
 		RangeSlider *slider;
@@ -135,7 +135,7 @@ class DoubleRangeSetting : public Setting
 		Q_OBJECT
 
 	public:
-		DoubleRangeSetting(Filter *f, Range<double> &r, Range<double> l = Range<double>(0, 100), QString tip = "") :
+        DoubleRangeSetting(Filter *f, ps::Range<double> &r, ps::Range<double> l = ps::Range<double>(0, 100), QString tip = "") :
 			Setting(f, tip), range(r), limits(l) { }
 
 	protected:
@@ -143,14 +143,14 @@ class DoubleRangeSetting : public Setting
 
 		QWidget * createWidget(QWidget *parent);
 
-		Range<double> &range;
-		Range<double> limits;
+        ps::Range<double> &range;
+        ps::Range<double> limits;
 
 		QDoubleSpinBox *spinnerL, *spinnerU;
 		RangeSlider *slider;
 
-		Range<double> getSliderRange(Range<int> range);
-		void setSliderRange(Range<double> value);
+        ps::Range<double> getSliderRange(ps::Range<int> range);
+        void setSliderRange(ps::Range<double> value);
 };
 
 class EnumSetting : public Setting
@@ -174,14 +174,14 @@ class SizeSetting : public Setting
 		Q_OBJECT
 
 	public:
-		SizeSetting(Filter *f, Size &v, Range<int> l = Range<int>(1, 100), QString tip = "") :
+        SizeSetting(Filter *f, Size &v, ps::Range<int> l = ps::Range<int>(1, 100), QString tip = "") :
 			Setting(f, tip), value(v), limits(l) { }
 
 	protected:
 		QWidget * createWidget(QWidget *parent);
 
 		Size &value;
-		Range<int> limits;
+        ps::Range<int> limits;
 
 		QSpinBox *spinnerH, *spinnerW;
 };

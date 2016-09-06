@@ -45,9 +45,9 @@ Threshold::Threshold(enum Threshold::Type t, double v, int sz, double d) :
 
 	settings["Type"]		= new EnumSetting(this, (int&) type, typeMap);
 	settings["Method"]		= new EnumSetting(this, (int&) method, methodMap);
-	settings["Threshold"]	= new DoubleSetting(this, value, Range<double>(0, 0xff));
-	settings["C"]			= new DoubleSetting(this, c, Range<double>(0, 0xff));
-	settings["Size"]		= new IntegerSetting(this, size, Range<int>(0, 100));
+    settings["Threshold"]	= new DoubleSetting(this, value, ps::Range<double>(0, 0xff));
+    settings["C"]			= new DoubleSetting(this, c, ps::Range<double>(0, 0xff));
+    settings["Size"]		= new IntegerSetting(this, size, ps::Range<int>(0, 100));
 	settings["Inverted"]	= new BooleanSetting(this, invert);
 }
 
